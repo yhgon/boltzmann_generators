@@ -207,6 +207,9 @@ class BoltzmannGenerator:
                 # Similarly, we don't need x_samples if w_ML and w_RC are both 0, we don't need x_samples
                 # but we still need to make up subdata_x
                 subdata_x = np.zeros(len(subdata_z))
+            else :
+                subdata_x = self.preprocess_data(x_samples)
+                        
 
         # for the ease of coding, we set loss_X as 0 if loss_X is 0
         loss_ML, loss_KL, loss_RC = self.w_loss[0], self.w_loss[1], self.w_loss[2]
